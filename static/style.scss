@@ -5,62 +5,95 @@ $grid-row-columns:  9;
     padding: 0;
     margin: 0;
 }
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    p {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .alert {
+        width: 40vw;
+        text-align: center;
+        position: relative;
+        align-self: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+        display: none;  
+    }
+    
+}
+
 .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-}
-.container {
-    width: 36rem;
-    height: 36rem;
-    margin-top: 3em;
-    position: relative;
-}
-.selection-row {
-    width: 36rem;
-    height: 4rem;
-}
-.row>* {
-    height: 4rem;
-    padding: 0;
-}
-button {
-    border: 1px solid teal;
-    width: 100%;
-    background-color: white;
-    /* padding: 0; */
-    /* height: 100%; */
-    border-radius: 0%;
-    border-bottom: 1px solid teal;
-    p {
+    z-index: 1;
+    .container {
+        width: 36rem;
+        height: 36rem;
+        margin-top: 3em;
+        position: relative;
+    }
+    .selection-row {
+        width: 36rem;
+        height: 4rem;
+    }
+    .row>* {
+        height: 4rem;
         padding: 0;
-        margin: 0;
-        font-size: 26px;
     }
-}
-.sudoku-board {
-    border: 1px solid teal;
-    .b-top {
-        border-top: 2px solid teal;
+    .gridbtn {
+        border: 1px solid teal;
+        width: 100%;
+        background-color: white;
+        /* padding: 0; */
+        /* height: 100%; */
+        border-radius: 0%;
+        border-bottom: 1px solid teal;
+        p {
+            padding: 0;
+            margin: 0;
+            font-size: 26px;
+        }
     }
-    .b-bottom {
-        border-bottom: 2px solid teal;
+    /* .choices {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        z-index: 3;
+        //display: none !important;
+    } */
+    .sudoku-board {
+        border: 3px solid teal;
+        .b-top {
+            border-top: 3px solid teal;
+        }
+        .b-bottom {
+            border-bottom: 3px solid teal;
+        }
+        .b-left {
+            border-left: 3px solid teal;
+        }
+        .b-right {
+            border-right: 3px solid teal;
+        }
     }
-    .b-left {
-        border-left: 2px solid teal;
+    .col:hover {
+        background-color: teal;
     }
-    .b-right {
-        border-right: 2px solid teal;
+    .col:disabled,
+    col[disabled] {
+        background-color: rgba(158, 237, 237, 0.33);
+        color: black;
+        font-weight: bold;
     }
-}
-.col:hover {
-    background-color: teal;
-}
-.col:disabled,
-col[disabled] {
-    background-color: rgba(158, 237, 237, 0.33);
-    color: black;
-    font-weight: bold;
 }
